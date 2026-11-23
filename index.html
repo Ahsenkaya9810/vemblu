@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Vemblu</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <div class="telefon">
+    <div class="durum" id="durum"></div>
+
+    <!-- ANA SAYFA -->
+    <section id="ana">
+      <div class="logo"></div>
+      <form id="anaForm" autocomplete="off">
+        <div class="kutu">
+          <i class="buyutec"></i>
+          <input id="anaInput" type="search" enterkeyhint="search" placeholder="Ara veya adres yaz">
+          <span class="temizle">×</span>
+        </div>
+      </form>
+      <div class="oneriler" id="oneriler" hidden></div>
+    </section>
+
+    <!-- SONUÇ SAYFASI -->
+    <section id="sonuc">
+      <div class="sonuc-ust">
+        <div class="logo" id="ustLogo"></div>
+        <form id="ustForm" autocomplete="off">
+          <div class="kutu">
+            <i class="buyutec"></i>
+            <input id="ustInput" type="search" enterkeyhint="search">
+            <span class="temizle">×</span>
+          </div>
+        </form>
+        <nav class="sekmeler" id="sekmeler"></nav>
+      </div>
+      <div class="sayi" id="sayi"></div>
+      <div id="sonuclar"></div>
+    </section>
+
+    <!-- SİTE SAYFASI (sonuca dokununca) -->
+    <section id="sayfa"></section>
+  </div>
+
+  <script src="veri.js"></script>
+  <script src="uygulama.js"></script>
+</body>
+</html>

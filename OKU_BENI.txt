@@ -1,0 +1,16 @@
+VEMBLU — SETE TESLİM / KURGUSAL YAYIN ADLARI REVİZESİ
+
+Arama motorunun orijinal görünümü korunur. Arama geçmişi ve otomatik öneriler kapalıdır.
+Beş arama: viyadük kalp krizi; yenişehir kalp krizi; kalp krizi; kalp krizi saat; kalp krizi hırsızlık.
+Hepsi açılabilir kurgusal haberler ve üçlü görsel şeridi gösterir.
+
+YAYIN ADLARI: Her isim bu çekim için türetilmiştir. Gerçek haber sitelerine ait logo kullanılmamıştır.
+Görünen .example adresleri, internette gerçek hedefi olmayan örnek alan adlarıdır.
+İsimler internette yapılan aramayla karşılaştırıldı; bu araştırma hukuki marka tescil taraması değildir.
+Görseller kurgusal/temsili haber görselleridir; gerçek olayı belgelemez.
+
+YAYINLAMA: GitHub'da mevcut Vemblu deposunda veri.js'yi güncellemek yayın adları ve görünen adresler için yeterlidir.
+Tüm projeyi sıfırdan yüklemek isterseniz index.html, stil.css, uygulama.js, veri.js ve gorseller/ klasörünü aynı köke koyun.
+Render: Static Site; Publish Directory '.'; Build Command boş.
+
+YAYIN ADI KONTROLÜ: Bu dosyadaki kurgusal yayın adları gerçek markalara ait oldukları iddiasıyla kullanılmamalıdır.

@@ -1,0 +1,172 @@
+/* =====================================================================
+   GÖRÜNÜM — Renkler en üstte. Koyu/açık mod veri.js'ten seçilir.
+   ===================================================================== */
+:root {
+  --zemin: #ffffff; --yazi: #1f1f1f; --soluk: #5f6368; --cizgi: #e3e5e8;
+  --kutu: #f1f3f4; --baslik: #1a3fb5; --vurgu: #e8590c;
+  --logo1: #e8590c; --logo2: #1a3fb5; --logo3: #2b9348;
+}
+body.karanlik {
+  --zemin: #15171a; --yazi: #e8eaed; --soluk: #9aa0a6; --cizgi: #2e3135;
+  --kutu: #24272b; --baslik: #8ab4f8; --vurgu: #ff8a4c;
+  --logo1: #ff8a4c; --logo2: #8ab4f8; --logo3: #6fcf97;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { background: var(--zemin); }
+body { font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--yazi); display: flex; justify-content: center; }
+.telefon { width: 100%; max-width: 430px; min-height: 100vh; position: relative; }
+
+.durum { display: flex; justify-content: space-between; padding: 10px 22px 4px;
+  font-size: 15px; font-weight: 600; }
+.pil { display: inline-block; width: 24px; height: 11px; border: 1.5px solid var(--yazi);
+  border-radius: 3px; margin-left: 6px; vertical-align: middle; position: relative; }
+.pil::after { content: ""; position: absolute; inset: 1.5px; right: 9px; background: var(--yazi); }
+
+.logo { font-weight: 800; letter-spacing: -1px; }
+.logo span:nth-child(3n+1) { color: var(--logo1); }
+.logo span:nth-child(3n+2) { color: var(--logo2); }
+.logo span:nth-child(3n) { color: var(--logo3); }
+
+/* --- arama kutusu --- */
+.kutu { display: flex; align-items: center; gap: 10px; background: var(--kutu);
+  border: 1px solid var(--cizgi); border-radius: 26px; height: 50px; padding: 0 16px; }
+.kutu svg { flex: none; width: 20px; height: 20px; fill: var(--soluk); }
+.kutu input { flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+  color: var(--yazi); font-size: 17px; font-family: inherit; }
+.kutu .temizle { color: var(--soluk); font-size: 22px; cursor: pointer; display: none; }
+.kutu.dolu .temizle { display: block; }
+
+/* --- ana sayfa --- */
+#ana { padding: 0 18px; }
+#ana .logo { font-size: 54px; text-align: center; margin: 22vh 0 26px; }
+.oneriler { margin-top: 6px; }
+.oneri { display: flex; align-items: center; gap: 14px; padding: 13px 6px; font-size: 16px;
+  border-bottom: 1px solid var(--cizgi); cursor: pointer; }
+.oneri svg { width: 18px; height: 18px; fill: var(--soluk); flex: none; }
+.oneri.gizli { display: none; }
+
+/* --- sonuç sayfası --- */
+#sonuc { display: none; }
+body.sonucta #ana { display: none; }
+body.sonucta #sonuc { display: block; }
+.sonuc-ust { position: sticky; top: 0; background: var(--zemin); padding: 12px 16px 0;
+  border-bottom: 1px solid var(--cizgi); z-index: 3; }
+.sonuc-ust .logo { font-size: 24px; text-align: center; margin-bottom: 10px; cursor: pointer; }
+.sekmeler { display: flex; gap: 20px; overflow-x: auto; margin-top: 12px; font-size: 14px;
+  scrollbar-width: none; }
+.sekmeler::-webkit-scrollbar { display: none; }
+.sekmeler span { flex: none; padding-bottom: 10px; color: var(--soluk); border-bottom: 3px solid transparent; }
+.sekmeler span.aktif { color: var(--yazi); font-weight: 600; border-color: var(--vurgu); }
+.sayi { font-size: 13px; color: var(--soluk); padding: 12px 16px 2px; }
+.sonuc-kart { padding: 16px; border-bottom: 1px solid var(--cizgi); }
+.site { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.favikon { width: 28px; height: 28px; border-radius: 50%; background: var(--kutu);
+  border: 1px solid var(--cizgi); display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: var(--soluk); }
+.site b { display: block; font-size: 14px; font-weight: 500; }
+.site small { font-size: 12px; color: var(--soluk); }
+.sonuc-kart h3 { font-size: 19px; font-weight: 400; color: var(--baslik); line-height: 1.3; margin-bottom: 6px; }
+.sonuc-kart p { font-size: 14px; color: var(--soluk); line-height: 1.5; }
+
+.yok { padding: 26px 18px; font-size: 15px; line-height: 1.6; }
+.yok b { font-weight: 700; }
+.yok ul { margin: 14px 0 0 20px; color: var(--soluk); }
+.yok li { margin-bottom: 4px; }
+
+.sonuc-kart { cursor: pointer; }
+/* --- site sayfası (kurgusal sağlık sitesi) --- */
+#sayfa { display: none; background: #fff; color: #222; min-height: 100vh; }
+body.sayfada #ana, body.sayfada #sonuc { display: none; }
+body.sayfada #sayfa { display: block; }
+body.sayfada { background: #fff; }
+.site-ust { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #0f7b6c; color: #fff; }
+.site-ust .geri { font-size: 30px; line-height: 20px; cursor: pointer; padding-right: 4px; }
+.site-ust .favikon { background: #fff; color: #0f7b6c; border: none; }
+.site-ust b { font-size: 17px; }
+.site-ust .menu { margin-left: auto; font-size: 20px; }
+.adres-cubuk { font-size: 12px; color: #666; background: #f3f3f3; padding: 6px 16px; }
+#sayfa article { padding: 18px 18px 40px; }
+#sayfa .kategori { display: inline-block; font-size: 12px; font-weight: 700; color: #0f7b6c;
+  background: #e2f4f1; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
+#sayfa h1 { font-size: 25px; line-height: 1.25; margin-bottom: 8px; }
+#sayfa .tarih { font-size: 13px; color: #888; margin-bottom: 16px; }
+#sayfa p { font-size: 16px; line-height: 1.65; margin-bottom: 14px; }
+
+/* SAHNE 7 EKİ: Orijinal Vemblu arama tasarımı değiştirilmez.
+   Yalnızca sonuçtan açılan yayın sayfaları zenginleştirilir. */
+#sayfa {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;}
+#sayfa .site-ust {background:#fff;color:#1b2932;border-bottom:1px solid #e5e9ed;padding:15px 17px;}
+#sayfa .site-ust .geri {display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#f1f4f5;font-size:29px;}
+#sayfa .site-ust .favikon {width:32px;height:32px;border-radius:9px;background:var(--yayinvurgu,#166f78);color:#fff;border:none;font-weight:800;}
+#sayfa .site-ust b {font-size:18px;letter-spacing:-.5px;}
+#sayfa .adres-cubuk {background:#fff;border-bottom:1px solid #e8edf0;color:#76838a;padding:9px 20px;}
+#sayfa article {padding:0 0 50px;}
+#sayfa .makale-icerik {max-width:760px;margin:auto;padding:24px 21px 35px;}
+#sayfa .kategori {color:var(--yayinvurgu,#167f84);background:#e8f4f3;border-radius:20px;font-size:11px;letter-spacing:1.1px;padding:7px 11px;margin-bottom:15px;}
+#sayfa h1 {font-size:clamp(29px,5vw,42px);line-height:1.16;letter-spacing:-.9px;margin:0 0 13px;font-weight:800;color:#17232d;}
+#sayfa .spot {font-size:17px;color:#596873;line-height:1.55;margin:0 0 15px;font-weight:500;}
+#sayfa .tarih {display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 0;border-top:1px solid #e8edf0;border-bottom:1px solid #e8edf0;color:#71818c;font-size:12px;margin:18px 0;}
+#sayfa .makale-kapak {width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#dbe8ee;}
+#sayfa .gorsel-notu {color:#88939a;font-size:11px;line-height:1.5;margin:9px 21px 24px;}
+#sayfa .makale-yazi p {font-size:17px;line-height:1.82;color:#303d47;margin-bottom:21px;}
+#sayfa .makale-yazi p:first-child::first-letter {font-weight:700;}
+#sayfa .makale-cizgi {height:3px;width:52px;background:var(--yayinvurgu,#167f84);margin:20px 0;}
+#sayfa .editoryal {background:#f1f7f7;border-left:3px solid var(--yayinvurgu,#167f84);border-radius:0 12px 12px 0;padding:16px 18px;margin:24px 0;font-size:14px;line-height:1.6;color:#3e5d64;}
+#sayfa .ilgi {border-top:1px solid #e6e9ec;margin-top:30px;padding-top:19px;color:#87949b;font-size:12px;letter-spacing:.3px;}
+#sayfa .alt-etiketler {display:flex;flex-wrap:wrap;gap:7px;padding-top:13px;}
+#sayfa .alt-etiketler span {background:#f2f4f6;border-radius:50px;padding:7px 10px;color:#526571;font-size:12px;}
+@media(min-width:700px){body.sayfada .telefon{max-width:900px;}#sayfa .makale-icerik{padding-top:38px;}#sayfa .makale-kapak{max-height:430px;}#sayfa .site-ust{padding-left:36px;padding-right:36px;}}
+@media(max-width:360px){#sayfa h1{font-size:27px;}#sayfa .makale-icerik{padding-left:17px;padding-right:17px;}}
+
+/* SAHNE 7 FINAL — yalnızca #sayfa içindeki haber detayları */
+body.sayfada{background:#fff;} body.sayfada .telefon{max-width:100%;}
+#sayfa{min-height:100vh;color:#20262b;background:#fff;}
+#sayfa .haber-kabuk{--news:#127969;--newspale:#ecf6f3;font-family:Arial,"Segoe UI",sans-serif;color:#252c32;background:#fff;min-height:100vh;}
+#sayfa .haber-kabuk.klinik{--news:#174b78;--newspale:#eff5fa;}
+#sayfa .haber-kabuk.gazete{--news:#a32d35;--newspale:#fcf1f1;}
+#sayfa .haber-mini{height:29px;background:#152732;color:#fff;display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.07em;padding:0 17px;text-transform:uppercase}
+#sayfa .haber-mini span{opacity:.55}
+#sayfa .haber-ust{max-width:1040px;margin:auto;display:flex;align-items:center;padding:15px 18px;gap:12px;border-bottom:1px solid #e9ecef;}
+#sayfa .haber-geri{border:0;border-radius:100px;background:#f1f3f4;width:36px;height:36px;font-size:28px;cursor:pointer;color:#334048;flex:none;line-height:1}
+#sayfa .haber-kimlik{display:flex;align-items:center;gap:11px;flex:1;min-width:0}
+#sayfa .haber-logo{width:43px;height:43px;border-radius:9px;display:grid;place-items:center;font-size:17px;font-weight:900;letter-spacing:-1px;background:var(--news);color:#fff;flex:none}
+#sayfa .haber-kimlik strong{display:block;color:#1b2630;font-size:clamp(19px,3.8vw,25px);letter-spacing:-.7px;line-height:1.1}
+#sayfa .haber-kimlik small{display:block;color:#819097;font-size:10px;margin-top:4px}
+#sayfa .haber-menu{font-size:22px;color:#6f7f85}
+#sayfa .haber-nav{max-width:1040px;margin:auto;padding:13px 20px;display:flex;gap:clamp(16px,5vw,33px);overflow-x:auto;white-space:nowrap;font-size:12px;font-weight:700;color:#43535c;border-bottom:1px solid #e9ecef;scrollbar-width:none}
+#sayfa .haber-nav::-webkit-scrollbar{display:none}
+#sayfa .haber-nav span:first-child{color:var(--news)}
+#sayfa .haber-article{max-width:1040px;margin:auto;padding:27px 20px 70px}
+#sayfa .haber-konum{font-size:10px;font-weight:700;letter-spacing:.08em;color:#8e999e;margin-bottom:27px}
+#sayfa .haber-konum span{padding:0 7px;color:#adb5bb}
+#sayfa .haber-kategori{color:var(--news);font-size:11px;letter-spacing:.09em;font-weight:800;margin-bottom:11px}
+#sayfa h1{font-size:clamp(27px,4.9vw,42px);line-height:1.19;font-weight:800;letter-spacing:-1.15px;color:#1d252b;max-width:800px;margin:0 0 15px}
+#sayfa .haber-spot{max-width:760px;color:#57646f;font-size:clamp(15px,2.6vw,18px);line-height:1.5;font-weight:400;margin:0 0 23px}
+#sayfa .haber-yazar{max-width:790px;display:flex;gap:10px;align-items:center;border-top:1px solid #e9edef;padding:16px 0;margin-bottom:16px}
+#sayfa .haber-yazar-ikon{width:31px;height:31px;flex:none;border-radius:50%;background:var(--newspale);color:var(--news);font-weight:800;display:grid;place-items:center;font-size:12px}
+#sayfa .haber-yazar b{font-size:12px;display:block}#sayfa .haber-yazar small{display:block;color:#8b969d;font-size:11px;margin-top:3px}#sayfa .haber-paylas{margin-left:auto;color:#78858d;font-size:19px}
+#sayfa .haber-gorsel{max-width:790px;margin:0 0 25px}#sayfa .haber-gorsel img{width:100%;display:block;object-fit:cover;aspect-ratio:16/9;background:#e7e7e7}
+#sayfa .haber-gorsel figcaption{color:#89939b;font-size:11px;padding-top:8px}
+#sayfa .haber-icerik{display:grid;grid-template-columns:minmax(0,700px) minmax(185px,270px);gap:40px;align-items:start}
+#sayfa .haber-metin p{font-family:Georgia,"Times New Roman",serif;color:#31383d;font-size:17px;line-height:1.85;margin:0 0 22px}
+#sayfa .haber-bilgi{padding:17px 19px;border-left:4px solid var(--news);background:var(--newspale);color:#445159;font-size:13px;line-height:1.6;margin:30px 0}
+#sayfa .haber-etiket{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 0}#sayfa .haber-etiket span{padding:8px 12px;background:#f2f4f6;color:#626d75;font-size:12px;border-radius:4px}
+#sayfa .haber-sidebar{padding-top:4px}#sayfa .haber-sidebar-baslik{border-bottom:2px solid var(--news);padding-bottom:10px;font-weight:800;font-size:13px;letter-spacing:.05em;margin-bottom:15px}#sayfa .haber-sidebar p{color:#78848c;font-size:13px;line-height:1.6}
+#sayfa .haber-reklam{height:220px;background:linear-gradient(150deg,#f0f4f6,#dce9ec);margin:25px 0 33px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;gap:19px}#sayfa .haber-reklam small{color:#a8b0b5;font-size:9px;letter-spacing:.16em}#sayfa .haber-reklam strong{font-size:19px;line-height:1.35;color:#3f555d}#sayfa .haber-reklam span{color:#7e949c;font-size:11px}
+#sayfa .haber-ilgili{display:block;width:100%;border:0;border-bottom:1px solid #e4e9ec;padding:15px 0;background:none;color:#36434d;font-size:13px;text-align:left;line-height:1.5;cursor:pointer}
+#sayfa .haber-devam{border-top:1px solid #e7ebef;padding-top:25px;margin-top:50px}#sayfa .haber-devam h2{font-size:22px;letter-spacing:-.5px;color:#27323a;margin-bottom:20px}
+#sayfa .haber-devam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}#sayfa .haber-ilgili-kart{border:1px solid #e3e8eb;padding:18px;text-align:left;background:#fff;min-height:140px;cursor:pointer}
+#sayfa .haber-ilgili-kart span{font-size:10px;color:var(--news);font-weight:800;letter-spacing:.09em}#sayfa .haber-ilgili-kart b{display:block;font-size:14px;line-height:1.45;color:#2a363d;margin:12px 0}#sayfa .haber-ilgili-kart small{color:#8b969d;font-size:11px}
+#sayfa .haber-footer{background:#172831;color:#fff;padding:25px 20px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:12px}#sayfa .haber-footer span{opacity:.5}
+@media(max-width:720px){#sayfa .haber-icerik{display:block}#sayfa .haber-sidebar{display:none}#sayfa .haber-devam-grid{grid-template-columns:1fr}#sayfa .haber-ilgili-kart{min-height:auto}#sayfa .haber-nav{padding-left:20px}#sayfa .haber-article{padding-top:22px}#sayfa .haber-konum{margin-bottom:19px}#sayfa .haber-metin p{font-size:16px;line-height:1.8}#sayfa .haber-gorsel{margin-left:-20px;margin-right:-20px}#sayfa .haber-gorsel figcaption{padding-left:20px}#sayfa .haber-gorsel img{aspect-ratio:1.48}}
+
+/* 23 Kasım / Sahne 7: üçlü görsel modülü — arama ana görünümüne dokunmaz */
+.mini-gorseller{padding:13px 16px 17px;border-bottom:1px solid var(--cizgi)}
+.mini-baslik{display:flex;align-items:baseline;gap:10px;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--yazi)}
+.mini-baslik span{font-size:11px;font-weight:400;color:var(--soluk)}
+.mini-sira{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mini-kart{padding:0;background:transparent;border:0;text-align:left;color:var(--yazi);cursor:pointer;min-width:0;font-family:inherit}
+.mini-kart img{display:block;width:100%;aspect-ratio:1.23;object-fit:cover;border-radius:9px;background:#2d3036}
+.mini-kart small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;line-height:1.35;margin-top:6px;color:var(--soluk)}
+@media(max-width:350px){.mini-gorseller{padding-left:12px;padding-right:12px}.mini-sira{gap:5px}.mini-kart small{font-size:10px}}
